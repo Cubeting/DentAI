@@ -2,13 +2,19 @@ from flask import Flask, request, jsonify
 import requests
 from flask_cors import CORS
 import logging
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from .env file
+load_dotenv()
 
 logging.basicConfig(level=logging.DEBUG)
 
 app = Flask(__name__)
 CORS(app)
 
-API_KEY = "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"
+# Get API Key from environment variables
+API_KEY = os.getenv("API_KEY")
 
 @app.route('/api/chat', methods=['POST'])
 def chat():
@@ -21,7 +27,7 @@ def chat():
         }
 
         data = {
-            "model": "mistral-7b-instruct-v0.2",
+            "model": "mistralai/mistral-small-3.1-24b-instruct:free",
             "messages": [{"role": "user", "content": user_prompt}],
             "temperature": 0.7,
             "max_tokens": 1000
@@ -32,7 +38,13 @@ def chat():
             res.raise_for_status()
             result = res.json()
             logging.debug(f"Respons dari API eksternal: {result}")
-            return jsonify({"response": result["choices"][0]["message"]["content"]})
+            
+            # Periksa apakah respons memiliki struktur yang diharapkan
+            if "choices" in result and len(result["choices"]) > 0 and "message" in result["choices"][0]:
+                return jsonify({"response": result["choices"][0]["message"]["content"]})
+            else:
+                logging.error(f"Struktur respons tidak valid: {result}")
+                return jsonify({"error": "Struktur respons tidak valid"}), 500
         except requests.exceptions.RequestException as e:
             logging.error(f"Error saat menghubungi API eksternal: {e}")
             return jsonify({"error": "Gagal menghubungi API eksternal", "details": str(e)}), 500
