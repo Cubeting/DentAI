@@ -4,9 +4,9 @@ const navLinks = document.querySelectorAll("nav a");
 // Tambahkan event listener ke setiap tautan navigasi
 navLinks.forEach(link => {
     link.addEventListener("click", function (event) {
-        event.preventDefault(); // Mencegah perilaku default tautan
-        const targetId = this.getAttribute("href").substring(1); // Ambil ID target dari atribut href
-        const targetSection = document.getElementById(targetId); // Temukan elemen dengan ID target
+        event.preventDefault();
+        const targetId = this.getAttribute("href").substring(1);
+        const targetSection = document.getElementById(targetId);
 
         // Scroll ke bagian target dengan halus
         if (targetSection) {

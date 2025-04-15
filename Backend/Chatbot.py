@@ -24,12 +24,12 @@ def chat():
         headers = {
             "Authorization": f"Bearer {API_KEY}",
             "HTTP-Referer": "http://dent-ai-web.vercel.app",
-            "X-Title": "DentAI",  # Optional, ganti dengan nama situs Anda
+            "X-Title": "DentAI",
             "Content-Type": "application/json"
         }
 
         data = {
-            "model": "mistralai/mistral-small-3.1-24b-instruct:free",  # Ganti model jika diperlukan
+            "model": "mistralai/mistral-small-3.1-24b-instruct:free",
             "messages": [{"role": "user", "content": user_prompt}]
         }
 

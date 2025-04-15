@@ -3,9 +3,9 @@
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-10px); /* Huruf bergerak ke atas */
+        transform: translateY(-10px);
     }
     100% {
-        transform: translateY(0); /* Kembali ke posisi semula */
+        transform: translateY(0);
     }
 }
