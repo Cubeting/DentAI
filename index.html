@@ -21,6 +21,12 @@
     <div id="chatResponse" style="height:150px; overflow-y:auto; border:1px solid #eee; padding:5px; margin-bottom:10px;"></div>
     <input type="text" id="chatInput" placeholder="Ketik pesan..." style="width:70%; padding:5px;">
     <button id="sendBtn" style="padding:5px 10px; background:#007bff; color:white; border:none; border-radius:5px;">Kirim</button>
+    <!-- Tambahkan elemen chatbot di sini -->
+    <section id="chatbot" class="section">
+        <input type="text" id="userPrompt" placeholder="Tanya tentang gigi..." style="width:70%; padding:5px; margin-top:10px;">
+        <button onclick="sendPrompt()" style="padding:5px 10px; background:#007bff; color:white; border:none; border-radius:5px;">Kirim</button>
+        <pre id="output" style="margin-top:10px;"></pre>
+    </section>
 </div>  
 <body>
     <!-- Navigasi -->
