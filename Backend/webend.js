@@ -20,6 +20,7 @@ navLinks.forEach(link => {
 
 // Tampilkan atau sembunyikan popup chat
 document.getElementById("chatBtn").addEventListener("click", function() {
+    console.log("Tombol chat ditekan");
     const popup = document.getElementById("chatPopup");
     const isHidden = window.getComputedStyle(popup).display === "none";
     popup.style.display = isHidden ? "block" : "none";
