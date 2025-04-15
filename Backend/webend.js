@@ -33,7 +33,7 @@ document.getElementById("sendBtn").addEventListener("click", function() {
         return;
     }
 
-    fetch("https://your-backend-url/api/chat", {
+    fetch("https://dent-ai-backend.onrender.com/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt: prompt })
