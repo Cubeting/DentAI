@@ -23,18 +23,18 @@ def chat():
 
         headers = {
             "Authorization": f"Bearer {API_KEY}",
+            "HTTP-Referer": "http://dent-ai-web.vercel.app",  # Optional, ganti dengan URL situs Anda
+            "X-Title": "DentAI",  # Optional, ganti dengan nama situs Anda
             "Content-Type": "application/json"
         }
 
         data = {
-            "model": "mistralai/mistral-small-3.1-24b-instruct:free",
-            "messages": [{"role": "user", "content": user_prompt}],
-            "temperature": 0.7,
-            "max_tokens": 1000
+            "model": "mistralai/mistral-small-3.1-24b-instruct:free",  # Ganti model jika diperlukan
+            "messages": [{"role": "user", "content": user_prompt}]
         }
 
         try:
-            res = requests.post("https://api.together.xyz/v1/chat/completions", headers=headers, json=data)
+            res = requests.post("https://openrouter.ai/api/v1/chat/completions", headers=headers, json=data)
             res.raise_for_status()
             result = res.json()
             logging.debug(f"Respons dari API eksternal: {result}")
