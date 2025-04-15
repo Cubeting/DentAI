@@ -18,16 +18,20 @@ navLinks.forEach(link => {
     });
 });
 
-// Tampilkan popup chat
+// Tampilkan atau sembunyikan popup chat
 document.getElementById("chatBtn").addEventListener("click", function() {
     const popup = document.getElementById("chatPopup");
-    popup.style.display = (popup.style.display === "none") ? "block" : "none";
+    const isHidden = window.getComputedStyle(popup).display === "none";
+    popup.style.display = isHidden ? "block" : "none";
 });
 
 // Kirim pesan ke backend
 document.getElementById("sendBtn").addEventListener("click", function() {
     const prompt = document.getElementById("chatInput").value;
-    if (prompt.trim() === "") return;
+    if (prompt.trim() === "") {
+        alert("Pesan tidak boleh kosong!");
+        return;
+    }
 
     fetch("/api/chat", {
         method: "POST",
@@ -44,6 +48,7 @@ document.getElementById("sendBtn").addEventListener("click", function() {
     })
     .catch(err => {
         console.error("Error:", err);
-        alert("Terjadi kesalahan saat mengirim pesan. Silakan coba lagi.");
+        const resDiv = document.getElementById("chatResponse");
+        resDiv.innerHTML += `<div><b>Error:</b> Tidak dapat mengirim pesan. Silakan coba lagi.</div>`;
     });
 });
