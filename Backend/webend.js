@@ -42,7 +42,13 @@ document.getElementById("sendBtn").addEventListener("click", function() {
     .then(data => {
         const resDiv = document.getElementById("chatResponse");
         resDiv.innerHTML += `<div><b>Anda:</b> ${prompt}</div>`;
-        resDiv.innerHTML += `<div><b>DentAI:</b> ${data.response}</div>`;
+        
+        if (data.response) {
+            resDiv.innerHTML += `<div><b>DentAI:</b> ${data.response}</div>`;
+        } else {
+            resDiv.innerHTML += `<div><b>DentAI:</b> Error: Respons tidak valid.</div>`;
+        }
+        
         resDiv.scrollTop = resDiv.scrollHeight;
         document.getElementById("chatInput").value = "";
     })
