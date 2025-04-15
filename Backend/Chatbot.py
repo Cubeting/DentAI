@@ -31,13 +31,8 @@ def chat():
             res = requests.post("https://api.together.xyz/v1/chat/completions", headers=headers, json=data)
             res.raise_for_status()
             result = res.json()
-            
-            # Periksa apakah struktur respons valid
-            if "choices" in result and len(result["choices"]) > 0 and "message" in result["choices"][0]:
-                return jsonify({"response": result["choices"][0]["message"]["content"]})
-            else:
-                logging.error(f"Struktur respons tidak valid: {result}")
-                return jsonify({"error": "Struktur respons tidak valid"}), 500
+            logging.debug(f"Respons dari API eksternal: {result}")
+            return jsonify({"response": result["choices"][0]["message"]["content"]})
         except requests.exceptions.RequestException as e:
             logging.error(f"Error saat menghubungi API eksternal: {e}")
             return jsonify({"error": "Gagal menghubungi API eksternal", "details": str(e)}), 500
