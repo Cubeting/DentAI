@@ -1,0 +1,78 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 97%;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 1000;
+    padding: 1em 1.5em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: auto;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    margin-left: -10px;
+}
+
+nav a:hover {
+    color: #007BFF;
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+.brand {
+    font-family: 'Superbubble', cursive;
+    font-size: 0.7em;
+    color: #007BFF;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+}
+
+.brand h1 {
+    margin: 0;
+}
+
+main {
+    margin-top: 0;
+}
+
+.section {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2em;
+}
+
+.brand-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.brand-link:hover {
+    color: #007BFF;
+}
