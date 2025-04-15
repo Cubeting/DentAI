@@ -13,6 +13,15 @@
     <link rel="stylesheet" href="Frontend/kontributor.css">
     <link rel="stylesheet" href="Frontend/kontak.css">
 </head>
+<!-- Tombol Chat -->
+<button id="chatBtn" style="position:fixed; bottom:20px; right:20px; padding:10px 20px; background-color:#007bff; color:white; border:none; border-radius:20px; cursor:pointer;">Chat</button>
+<!-- Popup Chat -->
+<div id="chatPopup" style="display:none; position:fixed; bottom:80px; right:20px; width:300px; background:white; border:1px solid #ccc; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.2); z-index:9999; padding:10px;">
+    <div style="font-weight:bold; margin-bottom:10px;">DentAI Chatbot</div>
+    <div id="chatResponse" style="height:150px; overflow-y:auto; border:1px solid #eee; padding:5px; margin-bottom:10px;"></div>
+    <input type="text" id="chatInput" placeholder="Ketik pesan..." style="width:70%; padding:5px;">
+    <button id="sendBtn" style="padding:5px 10px; background:#007bff; color:white; border:none; border-radius:5px;">Kirim</button>
+</div>  
 <body>
     <!-- Navigasi -->
     <header>

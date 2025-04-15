@@ -18,29 +18,32 @@ navLinks.forEach(link => {
     });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const chatContent = document.getElementById('chat-content');
-    const userInput = document.getElementById('user-input');
-    const sendButton = document.getElementById('send-button');
+// Tampilkan popup chat
+document.getElementById("chatBtn").addEventListener("click", function() {
+    const popup = document.getElementById("chatPopup");
+    popup.style.display = (popup.style.display === "none") ? "block" : "none";
+});
 
-    if (sendButton) {
-        sendButton.addEventListener('click', () => {
-            const userMessage = userInput.value.trim();
-            if (userMessage) {
-                // Tampilkan pesan pengguna
-                const userMessageElement = document.createElement('p');
-                userMessageElement.textContent = `Anda: ${userMessage}`;
-                chatContent.appendChild(userMessageElement);
+// Kirim pesan ke backend
+document.getElementById("sendBtn").addEventListener("click", function() {
+    const prompt = document.getElementById("chatInput").value;
+    if (prompt.trim() === "") return;
 
-                // Respons chatbot sederhana
-                const botMessageElement = document.createElement('p');
-                botMessageElement.textContent = `DentAI: Terima kasih atas pesan Anda. Kami akan segera membantu Anda.`;
-                chatContent.appendChild(botMessageElement);
-
-                // Bersihkan input
-                userInput.value = '';
-                chatContent.scrollTop = chatContent.scrollHeight; // Scroll ke bawah
-            }
-        });
-    }
+    fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt: prompt })
+    })
+    .then(res => res.json())
+    .then(data => {
+        const resDiv = document.getElementById("chatResponse");
+        resDiv.innerHTML += `<div><b>Anda:</b> ${prompt}</div>`;
+        resDiv.innerHTML += `<div><b>DentAI:</b> ${data.response}</div>`;
+        resDiv.scrollTop = resDiv.scrollHeight;
+        document.getElementById("chatInput").value = "";
+    })
+    .catch(err => {
+        console.error("Error:", err);
+        alert("Terjadi kesalahan saat mengirim pesan. Silakan coba lagi.");
+    });
 });
