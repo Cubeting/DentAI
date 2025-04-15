@@ -1,12 +1,11 @@
 from flask import Flask, request, jsonify
 import requests
 from flask_cors import CORS
-import os
 
 app = Flask(__name__)
 CORS(app)
 
-API_KEY = os.getenv("API_KEY")
+API_KEY = "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"
 
 @app.route('/api/chat', methods=['POST'])
 def chat():
@@ -24,13 +23,9 @@ def chat():
         "max_tokens": 1000
     }
 
-    try:
-        res = requests.post("https://api.together.xyz/v1/chat/completions", headers=headers, json=data)
-        res.raise_for_status()  # Akan memunculkan exception jika status code bukan 2xx
-        result = res.json()
-        return jsonify({"response": result["choices"][0]["message"]["content"]})
-    except requests.exceptions.RequestException as e:
-        return jsonify({"error": "Gagal menghubungi API eksternal", "details": str(e)}), 500
+    res = requests.post("https://api.together.xyz/v1/chat/completions", headers=headers, json=data)
+    result = res.json()
+    return jsonify({"response": result["choices"][0]["message"]["content"]})
 
 if __name__ == '__main__':
     app.run(debug=True)
