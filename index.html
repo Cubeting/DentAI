@@ -12,18 +12,16 @@
     <link rel="stylesheet" href="Frontend/tentang.css">
     <link rel="stylesheet" href="Frontend/kontributor.css">
     <link rel="stylesheet" href="Frontend/kontak.css">
-    <script src="Backend/webend.js"></script>
 </head>
 <!-- Tombol Chat -->
-<button id="chatBtn" style="position:fixed; bottom:20px; right:20px; padding:10px 20px; background-color:#007bff; color:white; border:none; border-radius:20px; cursor:pointer; z-index:1000;">Chat</button>
-
+<button id="chatBtn" style="position:fixed; bottom:20px; right:20px; padding:10px 20px; background-color:#007bff; color:white; border:none; border-radius:20px; cursor:pointer; z-index:1000">Chat</button>
 <!-- Popup Chat -->
 <div id="chatPopup" style="display:none; position:fixed; bottom:80px; right:20px; width:300px; background:white; border:1px solid #ccc; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.2); z-index:9999; padding:10px;">
     <div style="font-weight:bold; margin-bottom:10px;">DentAI Chat</div>
     <div id="chatResponse" style="height:150px; overflow-y:auto; border:1px solid #eee; padding:5px; margin-bottom:10px;"></div>
     <input type="text" id="chatInput" placeholder="Ketik pesan..." style="width:70%; padding:5px;">
     <button id="sendBtn" style="padding:5px 10px; background:#007bff; color:white; border:none; border-radius:5px;">Kirim</button>
-</div>
+</div>  
 <body>
     <!-- Navigasi -->
     <header>
@@ -130,6 +128,24 @@
                 <button type="submit">Kirim</button>
             </form>
         </section>
+
+    <!-- Tambahkan JavaScript -->
+    <script src="Backend/webend.js"></script>
+    <script>
+        async function sendPrompt() {
+            const prompt = document.getElementById("userPrompt").value;
+            const response = await fetch("https://hook.eu2.make.com/i9it7d9k2rgqg92ymlamyj3kqov38s1h", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ prompt: prompt })
+            });
+
+            const result = await response.json();
+            document.getElementById("output").textContent = result.response || result.error;
+        }
+    </script>
 
     <footer style="background-color: #f8f9fa; padding: 20px; text-align: center; border-top: 1px solid #ddd;">
         <p>&copy; 2025 DentAI. All rights reserved.</p>
