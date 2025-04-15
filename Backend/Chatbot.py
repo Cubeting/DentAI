@@ -34,7 +34,7 @@ def chat():
         }
 
         try:
-            res = requests.post("https://openrouter.ai/api/v1/chat/completions", headers=headers, json=data)
+            res = requests.post("https://hook.eu2.make.com/i9it7d9k2rgqg92ymlamyj3kqov38s1h", headers=headers, json=data)
             res.raise_for_status()
             result = res.json()
             logging.debug(f"Respons dari API eksternal: {result}")
