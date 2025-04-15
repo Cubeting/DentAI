@@ -23,7 +23,7 @@ def chat():
 
         headers = {
             "Authorization": f"Bearer {API_KEY}",
-            "HTTP-Referer": "http://dent-ai-web.vercel.app",  # Optional, ganti dengan URL situs Anda
+            "HTTP-Referer": "http://dent-ai-web.vercel.app",
             "X-Title": "DentAI",  # Optional, ganti dengan nama situs Anda
             "Content-Type": "application/json"
         }
