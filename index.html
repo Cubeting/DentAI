@@ -21,7 +21,7 @@
     <div id="chatResponse" style="height:150px; overflow-y:auto; border:1px solid #eee; padding:5px; margin-bottom:10px;"></div>
     <input type="text" id="chatInput" placeholder="Ketik pesan..." style="width:70%; padding:5px;">
     <button id="sendBtn" style="padding:5px 10px; background:#007bff; color:white; border:none; border-radius:5px;">Kirim</button>
-</div>  
+</div>  s
 <body>
     <!-- Navigasi -->
     <header>
@@ -153,6 +153,13 @@
             const result = await response.json();
             document.getElementById("output").textContent = result.response || result.error;
         }
+    </script>
+    <script type="module">
+        import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+        Chatbot.init({
+            chatflowid: "5471f2f8-fd0d-4e00-aa6c-b78f753e1e60",
+            apiHost: "http://localhost:3000",
+        })
     </script>
 
     <footer style="background-color: #f8f9fa; padding: 20px; text-align: center; border-top: 1px solid #ddd;">
