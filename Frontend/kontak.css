@@ -1,49 +1,281 @@
+/* Styling untuk bagian kontak */
 #contact {
-    background-color: #f4f4f4;
-    color: #333;
-    padding: 2em;
-    position: relative;
-    height: 90vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
+    align-items: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
+/* Background decorative elements */
+#contact::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+    animation: float 20s ease-in-out infinite;
+    z-index: 1;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+/* Judul kontak */
+#contact h1 {
+    font-family: 'Superbubble', cursive;
+    font-size: 3rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 2;
+}
+
+/* Container form */
+#contact form {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    max-width: 500px;
     width: 100%;
-    max-width: 400px;
-    margin-top: 5em;
+    position: relative;
+    z-index: 2;
+    border: 1px solid rgba(255,255,255,0.2);
 }
 
-form input, form textarea, form button {
-    padding: 0.5em;
-    font-size: 1em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+/* Styling label */
+#contact label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+    font-size: 1rem;
+    position: relative;
 }
 
-form button {
-    background-color: #007BFF;
+/* Icon untuk label */
+#contact label::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+#contact label[for="name"]::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23667eea' viewBox='0 0 24 24'%3E%3Cpath d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E");
+}
+
+#contact label[for="email"]::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23667eea' viewBox='0 0 24 24'%3E%3Cpath d='M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z'/%3E%3C/svg%3E");
+}
+
+#contact label[for="message"]::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23667eea' viewBox='0 0 24 24'%3E%3Cpath d='M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4v3c0 .6.4 1 1 1 .2 0 .5-.1.7-.3L14.6 18H20c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z'/%3E%3C/svg%3E");
+}
+
+/* Styling input dan textarea */
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e1e5e9;
+    border-radius: 10px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    font-family: inherit;
+    background: #ffffff;
+}
+
+/* Focus state untuk input */
+#contact input[type="text"]:focus,
+#contact input[type="email"]:focus,
+#contact textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Styling khusus textarea */
+#contact textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-family: inherit;
+}
+
+/* Placeholder styling */
+#contact input::placeholder,
+#contact textarea::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+/* Styling tombol submit */
+#contact button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
     cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
 }
 
-form button:hover {
-    background-color: #0056b3;
+/* Hover effect untuk tombol */
+#contact button[type="submit"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
 }
 
-#contact h1 {
-    font-size: 2em;
-    margin-bottom: 2em;
-    color: #007BFF;
-    position: static;
-    border-bottom: 4px solid #007BFF;
-    padding-bottom: 0.1em;
-    margin-bottom: 0.5em;
-    display: inline-block;
+/* Active effect untuk tombol */
+#contact button[type="submit"]:active {
+    transform: translateY(-1px);
+}
+
+/* Animasi loading untuk tombol */
+#contact button[type="submit"]::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+#contact button[type="submit"]:active::before {
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #contact {
+        padding: 40px 15px;
+    }
+    
+    #contact h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    #contact form {
+        padding: 30px 20px;
+        margin: 0 10px;
+    }
+    
+    #contact input[type="text"],
+    #contact input[type="email"],
+    #contact textarea {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+    
+    #contact button[type="submit"] {
+        padding: 12px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #contact h1 {
+        font-size: 2rem;
+    }
+    
+    #contact form {
+        padding: 25px 15px;
+    }
+    
+    #contact label {
+        font-size: 0.9rem;
+    }
+    
+    #contact label::before {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* Animasi masuk */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#contact form {
+    animation: slideInUp 0.8s ease-out;
+}
+
+/* Hover effect untuk form */
+#contact form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+}
+
+/* Validasi visual */
+#contact input:valid,
+#contact textarea:valid {
+    border-color: #28a745;
+}
+
+#contact input:invalid:not(:placeholder-shown),
+#contact textarea:invalid:not(:placeholder-shown) {
+    border-color: #dc3545;
+}
+
+/* Success message styling (untuk implementasi JavaScript) */
+.success-message {
+    background: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #c3e6cb;
+    display: none;
+}
+
+.error-message {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #f5c6cb;
+    display: none;
 }
