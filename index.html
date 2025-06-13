@@ -6,12 +6,14 @@
     <title>DentAI</title>
     <link rel="icon" href="Frontend/assets/tittle.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Superbubble&display=swap" rel="stylesheet">
+    
+    <!-- CSS Files -->
     <link rel="stylesheet" href="Frontend/animasi.css">
     <link rel="stylesheet" href="Frontend/navbar.css">
     <link rel="stylesheet" href="Frontend/beranda.css">
     <link rel="stylesheet" href="Frontend/tentang.css">
     <link rel="stylesheet" href="Frontend/kontributor.css">
-    <link rel="stylesheet" href="Frontend/kontak.css">
+    <link rel="stylesheet" href="Frontend/contact-redesign.css">
 </head>
 <body>
     <!-- Navigasi -->
@@ -45,73 +47,73 @@
         </section>
 
         <!-- About Section -->
-    <section id="about">
-        <!-- Background Images -->
-        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
-             alt="Dental Technology" class="background-image" id="bg-1">
-        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
-             alt="AI Technology" class="background-image" id="bg-2">
-        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
-             alt="Medical Team" class="background-image" id="bg-3">
-        <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
-             alt="Future Technology" class="background-image" id="bg-4">
-        
-        <div class="background-overlay"></div>
-        
-        <div class="page-counter">01</div>
-        
-        <div class="about-container">
-            <div class="main-content">
-                <div class="location-tag">Indonesia</div>
-                <h1 class="main-title" id="main-title">TENTANG KAMI</h1>
-                <p class="main-description" id="main-description">
-                    DentAI adalah platform inovatif yang menggabungkan teknologi kecerdasan buatan dengan dunia kedokteran gigi. 
-                    Kami berkomitmen untuk membantu pasien dan profesional gigi dalam mendiagnosis masalah kesehatan mulut secara cepat, akurat, dan mudah.
-                </p>
-                
-                <div class="navigation">
-                    <div class="nav-btn prev" onclick="previousPage()"></div>
-                    <div class="nav-btn next" onclick="nextPage()"></div>
+        <section id="about">
+            <!-- Background Images -->
+            <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+                 alt="Dental Technology" class="background-image" id="bg-1">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+                 alt="AI Technology" class="background-image" id="bg-2">
+            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+                 alt="Medical Team" class="background-image" id="bg-3">
+            <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+                 alt="Future Technology" class="background-image" id="bg-4">
+            
+            <div class="background-overlay"></div>
+            
+            <div class="page-counter">01</div>
+            
+            <div class="about-container">
+                <div class="main-content">
+                    <div class="location-tag">Indonesia</div>
+                    <h1 class="main-title" id="main-title">TENTANG KAMI</h1>
+                    <p class="main-description" id="main-description">
+                        DentAI adalah platform inovatif yang menggabungkan teknologi kecerdasan buatan dengan dunia kedokteran gigi. 
+                        Kami berkomitmen untuk membantu pasien dan profesional gigi dalam mendiagnosis masalah kesehatan mulut secara cepat, akurat, dan mudah.
+                    </p>
+                    
+                    <div class="navigation">
+                        <div class="nav-btn prev" onclick="previousPage()"></div>
+                        <div class="nav-btn next" onclick="nextPage()"></div>
+                    </div>
+                </div>
+
+                <div class="cards-container">
+                    <div class="card active" onclick="selectCard(0)">
+                        <img src="Frontend/assets/Tentang1.jpeg" 
+                             alt="Tentang Kami" class="card-image">
+                        <div class="card-overlay">
+                            <div class="card-title">TENTANG KAMI</div>
+                        </div>
+                    </div>
+
+                    <div class="card" onclick="selectCard(1)">
+                        <img src="Frontend/assets/Tentang2.jpeg" 
+                             alt="Teknologi AI" class="card-image">
+                        <div class="card-overlay">
+                            <div class="card-title">TEKNOLOGI AI</div>
+                        </div>
+                    </div>
+
+                    <div class="card" onclick="selectCard(2)">
+                        <img src="Frontend/assets/about1.jpeg" 
+                             alt="Tim Medis" class="card-image">
+                        <div class="card-overlay">
+                            <div class="card-title">TIM MEDIS</div>
+                        </div>
+                    </div>
+
+                    <div class="card" onclick="selectCard(3)">
+                        <img src="Frontend/assets/about2.jpeg" 
+                             alt="Visi Misi" class="card-image">
+                        <div class="card-overlay">
+                            <div class="card-title">VISI MISI</div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="cards-container">
-                <div class="card active" onclick="selectCard(0)">
-                    <img src="Frontend/assets/Tentang1.jpeg" 
-                         alt="Tentang Kami" class="card-image">
-                    <div class="card-overlay">
-                        <div class="card-title">TENTANG KAMI</div>
-                    </div>
-                </div>
-
-                <div class="card" onclick="selectCard(1)">
-                    <img src="Frontend/assets/Tentang2.jpeg" 
-                         alt="Teknologi AI" class="card-image">
-                    <div class="card-overlay">
-                        <div class="card-title">TEKNOLOGI AI</div>
-                    </div>
-                </div>
-
-                <div class="card" onclick="selectCard(2)">
-                    <img src="Frontend/assets/about1.jpeg" 
-                         alt="Tim Medis" class="card-image">
-                    <div class="card-overlay">
-                        <div class="card-title">TIM MEDIS</div>
-                    </div>
-                </div>
-
-                <div class="card" onclick="selectCard(3)">
-                    <img src="Frontend/assets/about2.jpeg" 
-                         alt="Visi Misi" class="card-image">
-                    <div class="card-overlay">
-                        <div class="card-title">VISI MISI</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script src="Backend/tampilan_interaktif.js"></script>
+        <script src="Backend/tampilan_interaktif.js"></script>
 
         <!-- Tambahkan script untuk inisialisasi slider -->
         <script src="tampilan_interaktif.js"></script>
@@ -242,25 +244,46 @@
         </section>
     </main>
 
-    <!-- Tambahkan JavaScript -->
-    <script src="Backend/webend.js"></script>
-
-    <script type="module">
-    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
-    Chatbot.init({
-        chatflowid: "0fd0c380-4455-4c5c-8c3b-6dc05dd2f482",
-        apiHost: "https://cloud.flowiseai.com",
-    })
-    </script>
-
-    <footer style="background-color: #f8f9fa; padding: 20px; text-align: center; border-top: 1px solid #ddd;">
-        <p>&copy; 2025 DentAI. All rights reserved.</p>
-        <p>
-            <a href="https://www.facebook.com" target="_blank">Facebook</a> |
-            <a href="https://www.twitter.com" target="_blank">Twitter</a> |
-            <a href="https://www.instagram.com" target="_blank">Instagram</a>
-        </p>
-        <p>Contact us: <a href="mailto:contact@dentai.com">contact@dentai.com</a></p>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>DentAI</h3>
+                <p>Platform inovatif untuk konsultasi kesehatan gigi dengan teknologi AI terdepan.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Our Store</h3>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#contributors">Contributors</a>
+                <a href="#contact">Contact</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Get In Touch</h3>
+                <p>📍 Sidoarjo, East Java, Indonesia</p>
+                <p>📞 +62 812 3456 789</p>
+                <p>✉️ contact@dentai.com</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 DentAI. All rights reserved. | Powered by DentAI</p>
+        </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script src="Backend/webend.js"></script>
+    <script src="Frontend/contact-redesign.js"></script>
+
+    <!-- Chatbot Integration -->
+    <script type="module">
+        import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+        Chatbot.init({
+            chatflowid: "0fd0c380-4455-4c5c-8c3b-6dc05dd2f482",
+            apiHost: "https://cloud.flowiseai.com",
+        })
+    </script>
 </body>
 </html>
