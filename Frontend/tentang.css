@@ -159,6 +159,7 @@
     opacity: 0.95;
     text-align: justify;
     animation: fadeInUp 1s ease-out;
+    max-width: 1000px;
 }
 
 @keyframes fadeInUp {
