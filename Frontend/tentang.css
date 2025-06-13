@@ -35,7 +35,7 @@
 /* Container untuk semua halaman tentang */
 .about-container {
     position: relative;
-    max-width: 900px;
+    max-width: 1200px;
     width: 100%;
     z-index: 2;
     perspective: 1000px;
@@ -113,25 +113,30 @@
     transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Individual page styling */
-.page {
-    width: 25%; /* 100% / 4 halaman */
+/* Layout berselang-seling untuk teks dan gambar */
+.about-layout {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
     height: 100%;
-    padding: 60px 50px;
+    padding: 40px;
+}
+
+.about-layout.reverse {
+    flex-direction: row-reverse;
+}
+
+.text-content {
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    opacity: 1;
-    transform: translateZ(0);
 }
 
-/* Page content styling */
-.page h1 {
+.text-content h1 {
     font-family: 'Superbubble', cursive;
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: #ffffff;
     margin-bottom: 30px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
@@ -144,13 +149,13 @@
     to { text-shadow: 2px 2px 4px rgba(0,0,0,0.3), 0 0 30px rgba(255,255,255,0.6); }
 }
 
-.page p {
-    font-size: 1.2rem;
+.text-content p {
+    font-size: 1.1rem;
     line-height: 1.8;
     color: #ffffff;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
     opacity: 0.95;
-    max-width: 700px;
+    text-align: justify;
     animation: fadeInUp 1s ease-out;
 }
 
@@ -165,18 +170,52 @@
     }
 }
 
+.image-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.image-content img {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    border: 3px solid rgba(255,255,255,0.2);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.image-content img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* Individual page styling */
+.page {
+    width: 25%; /* 100% / 4 halaman */
+    height: 100%;
+    position: relative;
+    opacity: 1;
+    transform: translateZ(0);
+}
+
 /* Special styling untuk halaman terakhir (quote) */
-.page:last-child p {
+.page:last-child .text-content p {
     font-size: 1.5rem;
     font-style: italic;
     font-weight: 600;
     color: #ffffff;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-align: center;
     position: relative;
 }
 
-.page:last-child p::before,
-.page:last-child p::after {
+.page:last-child .text-content p::before,
+.page:last-child .text-content p::after {
     content: '"';
     font-size: 2rem;
     color: #ffffff;
@@ -291,26 +330,32 @@
     }
     
     .about-slider {
-        height: 400px;
+        height: 600px;
         border-radius: 20px;
     }
     
-    .page {
-        padding: 40px 30px;
+    .about-layout,
+    .about-layout.reverse {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        padding: 30px 20px;
     }
     
-    .page h1 {
-        font-size: 2.2rem;
+    .text-content h1 {
+        font-size: 2rem;
         margin-bottom: 20px;
     }
     
-    .page p {
+    .text-content p {
         font-size: 1rem;
         line-height: 1.6;
+        text-align: center;
     }
     
-    .page:last-child p {
-        font-size: 1.2rem;
+    .image-content img {
+        max-width: 300px;
+        height: 250px;
     }
     
     .nav-arrow {
@@ -329,19 +374,24 @@
 
 @media (max-width: 480px) {
     .about-slider {
-        height: 350px;
+        height: 550px;
     }
     
-    .page {
-        padding: 30px 20px;
+    .about-layout {
+        padding: 20px 15px;
     }
     
-    .page h1 {
+    .text-content h1 {
         font-size: 1.8rem;
     }
     
-    .page p {
+    .text-content p {
         font-size: 0.9rem;
+    }
+    
+    .image-content img {
+        max-width: 280px;
+        height: 200px;
     }
     
     .nav-dot {
