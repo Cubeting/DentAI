@@ -130,6 +130,14 @@
     <!-- Tambahkan JavaScript -->
     <script src="Backend/webend.js"></script>
 
+    <script type="module">
+    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+    Chatbot.init({
+        chatflowid: "0fd0c380-4455-4c5c-8c3b-6dc05dd2f482",
+        apiHost: "https://cloud.flowiseai.com",
+    })
+    </script>
+
     <footer style="background-color: #f8f9fa; padding: 20px; text-align: center; border-top: 1px solid #ddd;">
         <p>&copy; 2025 DentAI. All rights reserved.</p>
         <p>
