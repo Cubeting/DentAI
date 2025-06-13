@@ -44,51 +44,74 @@
             <p>Tanya mengenai persoalan gigi dengan mudah.</p>
         </section>
 
-        <!-- Bagian Tentang - Update HTML Structure -->
-        <!-- Ganti 4 section #about yang ada dengan structure ini -->
+        <!-- About Section -->
+    <section id="about">
+        <!-- Background Images -->
+        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+             alt="Dental Technology" class="background-image" id="bg-1">
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+             alt="AI Technology" class="background-image" id="bg-2">
+        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+             alt="Medical Team" class="background-image" id="bg-3">
+        <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+             alt="Future Technology" class="background-image" id="bg-4">
+        
+        <div class="background-overlay"></div>
+        
+        <div class="page-counter">01</div>
+        
+        <div class="about-container">
+            <div class="main-content">
+                <div class="location-tag">Indonesia</div>
+                <h1 class="main-title" id="main-title">TENTANG KAMI</h1>
+                <p class="main-description" id="main-description">
+                    DentAI adalah platform inovatif yang menggabungkan teknologi kecerdasan buatan dengan dunia kedokteran gigi. 
+                    Kami berkomitmen untuk membantu pasien dan profesional gigi dalam mendiagnosis masalah kesehatan mulut secara cepat, akurat, dan mudah.
+                </p>
+                
+                <div class="navigation">
+                    <div class="nav-btn prev" onclick="previousPage()"></div>
+                    <div class="nav-btn next" onclick="nextPage()"></div>
+                </div>
+            </div>
 
-        <section id="about" class="section">
-            <!-- JavaScript akan otomatis membuat struktur slider di sini -->
-    
-            <!-- Halaman 1 -->
-            <div class="page">
-                <h1>Tentang Kami</h1>
-                <p><strong>DentAI</strong> adalah platform inovatif yang menggabungkan teknologi kecerdasan buatan dengan dunia kedokteran gigi. Kami berkomitmen untuk membantu pasien dan profesional gigi dalam mendiagnosis masalah kesehatan mulut secara cepat, akurat, dan mudah.</p>
-            </div>
-            <div class="image-content">
-                <img src="Frontend/assets/Tentang1.jpeg" alt="Deskripsi Foto">
-            </div>
-        </section>
+            <div class="cards-container">
+                <div class="card active" onclick="selectCard(0)">
+                    <img src="Frontend/assets/Tentang1.jpeg" 
+                         alt="Tentang Kami" class="card-image">
+                    <div class="card-overlay">
+                        <div class="card-title">TENTANG KAMI</div>
+                    </div>
+                </div>
 
-        <section id="about" class="section">
-            <!-- Halaman 2 -->
-            <div class="page">
-                <p>Dengan memanfaatkan analisis citra berbasis AI, DentAI mampu membaca hasil rontgen dan memberikan insight awal terhadap kondisi gigi dan mulut. Hal ini memungkinkan tindakan preventif maupun penanganan lebih lanjut bisa dilakukan lebih dini.</p>
-            </div>
-            <div class="image-content">
-                <img src="Frontend/assets/Tentang2.jpeg" alt="Deskripsi Foto">
-            </div>
-        </section>
+                <div class="card" onclick="selectCard(1)">
+                    <img src="Frontend/assets/Tentang2.jpeg" 
+                         alt="Teknologi AI" class="card-image">
+                    <div class="card-overlay">
+                        <div class="card-title">TEKNOLOGI AI</div>
+                    </div>
+                </div>
 
-        <section id="about" class="section">
-            <!-- Halaman 3 -->
-            <div class="page">
-                <p>Didirikan oleh tim yang terdiri dari pengembang, desainer, dan praktisi medis, kami percaya bahwa masa depan kesehatan ada di tangan teknologi yang bersahabat dan mudah diakses oleh siapa pun.</p>
-            </div>
-            <div class="image-content">
-                <img src="Frontend/assets/about1.jpeg" alt="Deskripsi Foto">
-            </div>
-        </section>
+                <div class="card" onclick="selectCard(2)">
+                    <img src="Frontend/assets/about1.jpeg" 
+                         alt="Tim Medis" class="card-image">
+                    <div class="card-overlay">
+                        <div class="card-title">TIM MEDIS</div>
+                    </div>
+                </div>
 
-        <section id="about" class="section">
-            <!-- Halaman 4 -->
-            <div class="page">
-                <p><em>DentAI – Senyum Sehat Dimulai dari Diagnosa yang Cerdas.</em></p>
+                <div class="card" onclick="selectCard(3)">
+                    <img src="Frontend/assets/about2.jpeg" 
+                         alt="Visi Misi" class="card-image">
+                    <div class="card-overlay">
+                        <div class="card-title">VISI MISI</div>
+                    </div>
+                </div>
             </div>
-            <div class="image-content">
-                <img src="Frontend/assets/about2.jpeg" alt="Deskripsi Foto">
-            </div>
-        </section>
+        </div>
+    </section>
+
+    <script src="Backend/tampilan_interaktif.js"></script>
 
         <!-- Tambahkan script untuk inisialisasi slider -->
         <script src="tampilan_interaktif.js"></script>
