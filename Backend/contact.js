@@ -326,7 +326,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const mapPlaceholder = document.querySelector('.map-placeholder');
     if (mapPlaceholder) {
         mapPlaceholder.addEventListener('click', function() {
-            const location = 'Sidoarjo, East Java, Indonesia';
+            const location = 'Gedung A10 Teknik Informatika UNESA'; // ganti lokasi di sini
             window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`, '_blank');
         });
         
