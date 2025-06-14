@@ -1,5 +1,4 @@
 // ===== CONTACT PAGE REDESIGN JAVASCRIPT =====
-// Script untuk menangani interaksi pada halaman contact DentAI
 document.addEventListener('DOMContentLoaded', function() {
     
     // ===== SMOOTH SCROLLING =====
@@ -326,7 +325,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const mapPlaceholder = document.querySelector('.map-placeholder');
     if (mapPlaceholder) {
         mapPlaceholder.addEventListener('click', function() {
-            const location = 'Gedung A10 Teknik Informatika UNESA'; // ganti lokasi di sini
+            const location = 'Gedung A10 Teknik Informatika UNESA';
             window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`, '_blank');
         });
         
