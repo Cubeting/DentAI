@@ -29,6 +29,7 @@ header {
 }
 
 .brand h1 {
+    font-family: sans-serif;
     font-size: 2rem;
     color: #ffffff;
     text-decoration: none;
@@ -116,7 +117,7 @@ nav a:hover {
 }
 
 .main-title {
-    font-family: 'Superbubble', cursive;
+    font-family: sans-serif;
     font-size: 4rem;
     font-weight: 700;
     line-height: 1.1;
