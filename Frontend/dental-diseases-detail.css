@@ -8,7 +8,7 @@
 
 body {
     font-family: 'Superbubble', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: linear-gradient(135deg, #0a1a0a 0%, #1a2f1a 50%, #0a1a0a 100%);
+    background: linear-gradient(135deg, #0a0c1a 0%, #1a1d2f 50%, #0a0c1a 100%);
     color: #ffffff;
     line-height: 1.6;
     min-height: 100vh;
@@ -20,7 +20,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(10, 26, 10, 0.95);
+    background: rgba(10, 12, 26, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     z-index: 1000;
@@ -37,7 +37,7 @@ body {
 }
 
 .brand h1 {
-    color: #34a853;
+    color: #3445a8;
     font-size: 2rem;
     font-weight: 700;
     text-decoration: none;
@@ -62,7 +62,7 @@ body {
 
 .nav-menu a:hover,
 .nav-menu a.active {
-    color: #34a853;
+    color: #3440a8;
 }
 
 .nav-menu a.active::after {
@@ -72,12 +72,12 @@ body {
     left: 0;
     right: 0;
     height: 2px;
-    background: #34a853;
+    background: #3449a8;
 }
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(135deg, rgba(52, 168, 83, 0.1) 0%, rgba(26, 47, 26, 0.3) 100%);
+    background: linear-gradient(135deg, rgba(52, 54, 168, 0.1) 0%, rgba(26, 28, 47, 0.3) 100%);
     padding: 120px 0 80px;
     text-align: center;
     position: relative;
@@ -115,7 +115,7 @@ body {
 }
 
 .breadcrumb a {
-    color: #34a853;
+    color: #343ca8;
     text-decoration: none;
 }
 
@@ -127,7 +127,7 @@ body {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 20px;
-    background: linear-gradient(45deg, #ffffff, #34a853);
+    background: linear-gradient(45deg, #ffffff, #3440a8);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -155,7 +155,7 @@ body {
     display: block;
     font-size: 2.5rem;
     font-weight: 700;
-    color: #34a853;
+    color: #344fa8;
     line-height: 1;
 }
 
@@ -208,10 +208,10 @@ body {
 
 .filter-btn:hover,
 .filter-btn.active {
-    background: #34a853;
-    border-color: #34a853;
+    background: #3445a8;
+    border-color: #3445a8;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(52, 168, 83, 0.3);
+    box-shadow: 0 5px 15px rgba(52, 54, 168, 0.3);
 }
 
 /* Diseases Container */
@@ -302,8 +302,8 @@ body {
 }
 
 .disease-meta span {
-    background: rgba(52, 168, 83, 0.1);
-    color: #34a853;
+    background: rgba(52, 64, 168, 0.1);
+    color: #343ca8;
     padding: 5px 12px;
     border-radius: 15px;
     font-size: 0.8rem;
@@ -343,7 +343,7 @@ body {
 
 .symptoms li::before {
     content: '•';
-    color: #34a853;
+    color: #3436a8;
     font-size: 1.2rem;
     position: absolute;
     left: 0;
@@ -406,7 +406,7 @@ body {
 }
 
 .ai-consultation-btn {
-    background: linear-gradient(45deg, #34a853, #4caf50);
+    background: linear-gradient(45deg, #3445a8, #4c5baf);
     color: white;
 }
 
@@ -434,7 +434,7 @@ body {
 }
 
 .footer-section h3 {
-    color: #34a853;
+    color: #343ca8;
     font-size: 1.3rem;
     margin-bottom: 20px;
 }
@@ -449,7 +449,7 @@ body {
 }
 
 .footer-section a:hover {
-    color: #34a853;
+    color: #3c34a8;
 }
 
 .footer-bottom {
