@@ -43,7 +43,7 @@ nav a:hover {
 }
 
 .brand {
-    font-family: 'Superbubble', cursive;
+    font-family: sans-serif;
     font-size: 0.7em;
     color: #007BFF;
     margin-right: auto;
