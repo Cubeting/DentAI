@@ -268,6 +268,39 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Tambahan penyakit struktural untuk testing -->
+                <div class="disease-item" data-category="struktural">
+                    <div class="disease-card-detail">
+                        <div class="disease-image-container">
+                            <img src="Frontend/assets/malokusi.jpg" alt="Maloklusi" class="disease-img">
+                            <div class="severity-badge moderate">Sedang</div>
+                        </div>
+                        <div class="disease-content">
+                            <h3>Maloklusi (Gigi Tidak Rata)</h3>
+                            <div class="disease-meta">
+                                <span class="prevalence">Prevalensi: 60% populasi</span>
+                                <span class="severity">Tingkat: Ringan-Sedang</span>
+                            </div>
+                            <p class="disease-description">
+                                Maloklusi adalah kondisi dimana gigi atas dan bawah tidak bertemu dengan sempurna saat mulut tertutup, menyebabkan susunan gigi yang tidak rata.
+                            </p>
+                            <div class="symptoms">
+                                <h4>Gejala:</h4>
+                                <ul>
+                                    <li>Gigi tidak rata atau berdesakan</li>
+                                    <li>Kesulitan mengunyah</li>
+                                    <li>Kesulitan membersihkan gigi</li>
+                                    <li>Gangguan bicara</li>
+                                </ul>
+                            </div>
+                            <div class="treatment">
+                                <h4>Pengobatan:</h4>
+                                <p>Perawatan ortodontik dengan kawat gigi atau aligner transparan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Emergency Contact -->
@@ -311,27 +344,53 @@
 
     <!-- JavaScript -->
     <script>
-        // Filter functionality
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const diseaseItems = document.querySelectorAll('.disease-item');
+        // DOM Content Loaded Event
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, initializing filters...');
+            
+            // Filter functionality
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const diseaseItems = document.querySelectorAll('.disease-item');
 
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                // Add active class to clicked button
-                button.classList.add('active');
+            console.log('Found filter buttons:', filterButtons.length);
+            console.log('Found disease items:', diseaseItems.length);
 
-                const filterValue = button.getAttribute('data-filter');
+            // Log all categories for debugging
+            diseaseItems.forEach((item, index) => {
+                console.log(`Item ${index}: category = "${item.getAttribute('data-category')}"`);
+            });
 
-                diseaseItems.forEach(item => {
-                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                        item.style.display = 'block';
-                        item.style.animation = 'fadeIn 0.5s ease';
-                    } else {
-                        item.style.display = 'none';
-                    }
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    console.log('Filter clicked:', this.getAttribute('data-filter'));
+                    
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    const filterValue = this.getAttribute('data-filter');
+                    console.log('Filtering by:', filterValue);
+
+                    diseaseItems.forEach(item => {
+                        const itemCategory = item.getAttribute('data-category');
+                        console.log(`Checking item with category: "${itemCategory}" against filter: "${filterValue}"`);
+                        
+                        if (filterValue === 'all' || itemCategory === filterValue) {
+                            item.style.display = 'block';
+                            item.style.animation = 'fadeIn 0.5s ease';
+                            console.log('Showing item');
+                        } else {
+                            item.style.display = 'none';
+                            console.log('Hiding item');
+                        }
+                    });
                 });
+            });
+
+            // Show all items initially
+            diseaseItems.forEach(item => {
+                item.style.display = 'block';
             });
         });
 
@@ -363,7 +422,7 @@
             });
         }, observerOptions);
 
-        diseaseItems.forEach(item => {
+        document.querySelectorAll('.disease-item').forEach(item => {
             observer.observe(item);
         });
     </script>

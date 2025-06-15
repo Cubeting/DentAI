@@ -304,9 +304,9 @@ body {
 .disease-meta span {
     background: rgba(52, 64, 168, 0.1);
     color: #343ca8;
-    padding: 5px 12px;
+    padding: 6px 12px;
     border-radius: 15px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 500;
 }
 
@@ -343,85 +343,77 @@ body {
 
 .symptoms li::before {
     content: '•';
-    color: #3436a8;
-    font-size: 1.2rem;
+    color: #3445a8;
+    font-weight: bold;
     position: absolute;
     left: 0;
 }
 
 .treatment p {
     color: #b0b0b0;
-    font-style: italic;
+    line-height: 1.6;
 }
 
 /* Emergency Section */
 .emergency-section {
     margin-top: 80px;
-    text-align: center;
+    padding: 40px 0;
 }
 
 .emergency-card {
-    background: linear-gradient(135deg, rgba(244, 67, 54, 0.1), rgba(255, 152, 0, 0.1));
-    border: 2px solid rgba(244, 67, 54, 0.3);
+    background: linear-gradient(135deg, rgba(244, 67, 54, 0.1), rgba(239, 83, 80, 0.1));
+    border: 1px solid rgba(244, 67, 54, 0.3);
     border-radius: 20px;
     padding: 40px;
-    max-width: 600px;
-    margin: 0 auto;
+    text-align: center;
+    backdrop-filter: blur(10px);
 }
 
 .emergency-card h2 {
-    color: #ff5722;
+    color: #f44336;
     font-size: 2rem;
     margin-bottom: 15px;
+    font-weight: 700;
 }
 
 .emergency-card p {
     color: #b0b0b0;
+    font-size: 1.1rem;
     margin-bottom: 30px;
     line-height: 1.6;
 }
 
 .emergency-contact {
     display: flex;
-    gap: 20px;
     justify-content: center;
-    flex-wrap: wrap;
+    gap: 20px;
 }
 
-.emergency-btn,
-.ai-consultation-btn {
+.emergency-btn {
+    background: linear-gradient(45deg, #f44336, #ef5350);
+    color: white;
     padding: 15px 30px;
     border-radius: 30px;
     text-decoration: none;
     font-weight: 600;
+    font-size: 1.1rem;
     transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
     gap: 10px;
 }
 
-.emergency-btn {
-    background: linear-gradient(45deg, #f44336, #ff5722);
-    color: white;
-}
-
-.ai-consultation-btn {
-    background: linear-gradient(45deg, #3445a8, #4c5baf);
-    color: white;
-}
-
-.emergency-btn:hover,
-.ai-consultation-btn:hover {
+.emergency-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 25px rgba(244, 67, 54, 0.3);
 }
 
 /* Footer */
 .footer {
-    background: rgba(0, 0, 0, 0.3);
-    margin-top: 80px;
-    padding: 60px 0 20px;
+    background: rgba(10, 12, 26, 0.9);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 60px 0 20px;
+    margin-top: 80px;
 }
 
 .footer-content {
@@ -434,41 +426,52 @@ body {
 }
 
 .footer-section h3 {
-    color: #343ca8;
+    color: #3445a8;
     font-size: 1.3rem;
     margin-bottom: 20px;
+    font-weight: 600;
 }
 
 .footer-section p,
 .footer-section a {
     color: #b0b0b0;
     text-decoration: none;
+    line-height: 1.8;
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     transition: color 0.3s ease;
 }
 
 .footer-section a:hover {
-    color: #3c34a8;
+    color: #3445a8;
 }
 
 .footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 40px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     text-align: center;
     margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
     color: #888;
+    font-size: 0.9rem;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-container {
         padding: 0 20px;
+        flex-direction: column;
+        gap: 20px;
     }
     
     .nav-menu {
-        flex-direction: column;
-        gap: 15px;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
     .hero-content {
@@ -480,8 +483,8 @@ body {
     }
     
     .hero-stats {
-        flex-direction: column;
         gap: 30px;
+        flex-wrap: wrap;
     }
     
     .container {
@@ -493,24 +496,28 @@ body {
         gap: 30px;
     }
     
-    .filter-buttons {
-        justify-content: center;
+    .disease-content {
+        padding: 20px;
     }
     
-    .disease-meta {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .emergency-contact {
-        flex-direction: column;
-        align-items: center;
+    .emergency-card {
+        padding: 30px 20px;
     }
     
     .footer-content {
+        padding: 0 20px;
         grid-template-columns: 1fr;
         gap: 30px;
         text-align: center;
+    }
+    
+    .filter-buttons {
+        gap: 10px;
+    }
+    
+    .filter-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
     }
 }
 
@@ -519,15 +526,76 @@ body {
         font-size: 2rem;
     }
     
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
     .stat-number {
         font-size: 2rem;
     }
     
-    .disease-content {
-        padding: 20px;
+    .disease-meta {
+        gap: 10px;
     }
     
-    .emergency-card {
-        padding: 25px;
+    .disease-meta span {
+        font-size: 0.8rem;
+        padding: 4px 8px;
     }
+    
+    .emergency-btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+}
+
+/* Animation for disease items when they become visible */
+.disease-item.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Smooth transitions for filter animations */
+.disease-item {
+    transition: all 0.5s ease;
+}
+
+/* Loading state for images */
+.disease-img {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Focus states for accessibility */
+.filter-btn:focus,
+.emergency-btn:focus,
+.nav-menu a:focus {
+    outline: 2px solid #3445a8;
+    outline-offset: 2px;
+}
+
+/* Hover effects for better interactivity */
+.disease-card-detail {
+    cursor: pointer;
+}
+
+.disease-card-detail:hover .disease-content h3 {
+    color: #3445a8;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(52, 69, 168, 0.5);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(52, 69, 168, 0.7);
 }
