@@ -27,7 +27,6 @@
     font-size: 2rem;
     font-weight: 700;
     text-decoration: none;
-    margin: 0;
 }
 
 .brand-link {
@@ -45,7 +44,6 @@
     font-weight: 500;
     transition: all 0.3s ease;
     position: relative;
-    padding: 8px 0;
 }
 
 .nav-menu a:hover,
@@ -63,12 +61,6 @@
     background: #3449a8;
 }
 
-/* Focus states for accessibility */
-.nav-menu a:focus {
-    outline: 2px solid #3445a8;
-    outline-offset: 2px;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-container {
@@ -83,21 +75,49 @@
         justify-content: center;
     }
     
-    .brand h1 {
-        font-size: 1.8rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .nav-menu {
-        gap: 15px;
+    .hero-content {
+        padding: 0 20px;
     }
     
-    .nav-menu a {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-stats {
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+    
+    .container {
+        padding: 0 20px;
+    }
+    
+    .diseases-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .disease-content {
+        padding: 20px;
+    }
+    
+    .emergency-card {
+        padding: 30px 20px;
+    }
+    
+    .footer-content {
+        padding: 0 20px;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .filter-buttons {
+        gap: 10px;
+    }
+    
+    .filter-btn {
+        padding: 10px 20px;
         font-size: 0.9rem;
-    }
-    
-    .brand h1 {
-        font-size: 1.6rem;
     }
 }
