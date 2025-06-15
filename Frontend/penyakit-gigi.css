@@ -47,8 +47,8 @@
 
 .location-tag {
     display: inline-block;
-    background: rgba(52, 168, 83, 0.2);
-    color: #34a853;
+    background: rgba(52, 69, 168, 0.2);
+    color: #3483a8;
     padding: 8px 16px;
     border-radius: 20px;
     font-size: 14px;
@@ -74,7 +74,7 @@
 }
 
 .cta-button {
-    background: linear-gradient(45deg, #34a853, #4caf50);
+    background: linear-gradient(45deg, #3497a8, #4c93af);
     color: white;
     border: none;
     padding: 16px 32px;
@@ -86,12 +86,12 @@
     align-items: center;
     gap: 12px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(52, 168, 83, 0.3);
+    box-shadow: 0 4px 15px rgba(52, 89, 168, 0.3);
 }
 
 .cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(52, 168, 83, 0.4);
+    box-shadow: 0 8px 25px rgba(52, 83, 168, 0.4);
 }
 
 .arrow {
@@ -162,7 +162,7 @@
 .stat-number {
     font-size: 2rem;
     font-weight: 700;
-    color: #34a853;
+    color: #3459a8;
     line-height: 1;
 }
 
