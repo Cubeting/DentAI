@@ -38,16 +38,14 @@ nav a {
 }
 
 nav a:hover {
-    color: 
-#007BFF;
+    color: #007BFF;
     background-color: rgba(0, 123, 255, 0.1);
 }
 
 .brand {
     font-family: 'Superbubble', cursive;
     font-size: 0.7em;
-    color: 
-#007BFF;
+    color: #007BFF;
     margin-right: auto;
     display: flex;
     align-items: center;
@@ -76,6 +74,5 @@ main {
 }
 
 .brand-link:hover {
-    color: 
-#007BFF;
+    color: #007BFF;
 }
