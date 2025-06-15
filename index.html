@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="Frontend/navbar.css">
     <link rel="stylesheet" href="Frontend/beranda.css">
     <link rel="stylesheet" href="Frontend/tentang.css">
+    <link rel="stylesheet" href="Frontend/penyakit-gigi.css">
     <link rel="stylesheet" href="Frontend/kontributor.css">
     <link rel="stylesheet" href="Frontend/kontak.css">
 </head>
@@ -26,6 +27,7 @@
         <nav>
             <a href="#home">Beranda</a>
             <a href="#about">Tentang</a>
+            <a href="#dental-diseases">Penyakit Gigi</a>
             <a href="#contributors">Kontributor</a>
             <a href="#contact">Kontak</a>
         </nav>
@@ -107,6 +109,101 @@
                              alt="Visi Misi" class="card-image">
                         <div class="card-overlay">
                             <div class="card-title">VISI MISI</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dental Diseases Section -->
+        <section id="dental-diseases" class="dental-diseases-section">
+            <div class="diseases-hero">
+                <div class="hero-content">
+                    <div class="hero-left">
+                        <div class="location-tag">Indonesia</div>
+                        <h1>Penyakit Gigi & Mulut</h1>
+                        <p>Kenali berbagai penyakit gigi dan mulut yang umum terjadi. Dengan teknologi AI kami, dapatkan informasi lengkap dan akurat tentang kondisi kesehatan gigi Anda.</p>
+                        <button class="cta-button" onclick="window.open('dental-diseases-detail.html', '_blank')">
+                            Selengkapnya
+                            <span class="arrow">→</span>
+                        </button>
+                    </div>
+                    <div class="hero-right">
+                        <div class="featured-disease">
+                            <img src="Frontend/assets/karies-gigi.jpg" alt="Karies Gigi" class="disease-image">
+                            <div class="disease-info">
+                                <div class="disease-badge">Paling Umum</div>
+                                <h3>Karies Gigi</h3>
+                                <p>Karies gigi adalah kerusakan struktur gigi yang disebabkan oleh bakteri yang menghasilkan asam dari sisa makanan. Kondisi ini dapat menyebabkan lubang pada gigi jika tidak ditangani dengan tepat.</p>
+                                <div class="disease-stats">
+                                    <div class="stat">
+                                        <span class="stat-number">90%</span>
+                                        <span class="stat-label">Populasi Terkena</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-number">3-7</span>
+                                        <span class="stat-label">Hari Pemulihan</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Disease Cards -->
+            <div class="quick-diseases">
+                <h2>Penyakit Umum Lainnya</h2>
+                <div class="diseases-grid">
+                    <div class="disease-card">
+                        <div class="card-image-container">
+                            <img src="Frontend/assets/gingivitis.jpg" alt="Gingivitis">
+                            <div class="card-overlay">
+                                <div class="severity-badge moderate">Sedang</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Gingivitis</h3>
+                            <p>Peradangan pada gusi yang disebabkan oleh plak bakteri.</p>
+                        </div>
+                    </div>
+
+                    <div class="disease-card">
+                        <div class="card-image-container">
+                            <img src="Frontend/assets/periodontitis.jpg" alt="Periodontitis">
+                            <div class="card-overlay">
+                                <div class="severity-badge severe">Parah</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Periodontitis</h3>
+                            <p>Infeksi gusi serius yang merusak jaringan lunak dan tulang.</p>
+                        </div>
+                    </div>
+
+                    <div class="disease-card">
+                        <div class="card-image-container">
+                            <img src="Frontend/assets/pulpitis.jpg" alt="Pulpitis">
+                            <div class="card-overlay">
+                                <div class="severity-badge severe">Parah</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Pulpitis</h3>
+                            <p>Peradangan pada pulpa gigi yang menyebabkan nyeri hebat.</p>
+                        </div>
+                    </div>
+
+                    <div class="disease-card">
+                        <div class="card-image-container">
+                            <img src="Frontend/assets/abses.jpg" alt="Abses Gigi">
+                            <div class="card-overlay">
+                                <div class="severity-badge severe">Parah</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Abses Gigi</h3>
+                            <p>Penumpukan nanah akibat infeksi bakteri pada gigi.</p>
                         </div>
                     </div>
                 </div>
@@ -256,6 +353,7 @@
                 <h3>Our Store</h3>
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
+                <a href="#dental-diseases">Dental Diseases</a>
                 <a href="#contributors">Contributors</a>
                 <a href="#contact">Contact</a>
             </div>
